@@ -1,0 +1,51 @@
+{% extends 'weather/base.html' %}
+
+{% block content %}
+
+</nav>
+
+<div class="container">
+
+<div class="jumbotron">
+  <h1 class="display-4">Welcome To Live Weather Station</h1>
+  <hr class="my-4">
+
+
+</div>
+
+<table class="table table-light table-bordered table-hover">
+  <thead>
+    <tr>
+      <th scope="col">City Name</th>
+      <th scope="col">Region</th>
+      <th scope="col">Temperature</th>
+      <th scope="col">Local Time</th>
+    </tr>
+  </thead>
+
+
+
+        <tr>
+          <td>{{defaulte.location.name}}</td>
+          <td>{{defaulte.location.region}}</td>
+          <td> {{defaulte.current.temp_c}}</td>
+          <td> {{defaulte.location.localtime}}</td>
+
+        </tr>
+
+
+
+
+
+  </table>
+
+
+
+  <form class="form-inline my-2 my-lg-0" method="POST" action="{% url 'searched_weather'%}">
+    {% csrf_token %}
+    <input class="form-control mr-sm-2" type="search" placeholder="City Name" aria-label="Search" name='city'>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Look For</button>
+  </form>
+
+
+{% endblock %}

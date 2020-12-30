@@ -1,0 +1,23 @@
+{% extends 'weather/base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+
+<div class="jumbotron">
+  <h1 class="display-4">Details of {{t.location.name}}</h1>
+  <strong>Region : </strong>{{t.location.region}}<br>
+  <strong>Country : </strong>{{t.location.country}}<br>
+  <strong>Local Time : </strong>{{t.location.localtime}}<br>
+  <strong>Latitude : </strong>{{t.location.lat}}<br>
+  <strong>Longitude : </strong>{{t.location.lon}}<br>
+  <strong>Temperature : </strong> {{t.current.temp_c}}<br>
+  <strong>Feels Like : </strong>{{t.current.feelslike_c}}<br>
+
+  </div>
+
+  </div>
+
+
+{% endblock %}

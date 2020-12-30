@@ -1,0 +1,24 @@
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+  {% load staticfiles %}
+
+
+      {% if user.is_authenticated %}
+
+      <div class="container">
+          <div class="jumbotron">
+      <h1 class="display-4">
+        <p class="tm-copyright-text">Name: {{user.first_name}} {{user.last_name}}</p>
+        <p>Username: {{user.username}}</p>
+        <p>Email: {{user.email}}</p>
+
+        {% endif %}
+      </h1>
+      </div></div>
+
+
+
+
+{% endblock %}
